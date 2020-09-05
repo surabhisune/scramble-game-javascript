@@ -1,0 +1,81 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    height:15vh;
+    background-color:#562349;
+    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Kufam', cursive;
+    text-shadow:0 1px 0 #efefef,0 2px 0 #efefef,0 3px 0 #efefef,0 4px 0 #efefef,0 30px 5px rgba(0,0,0,.1);
+}
+ section {
+     width: 100%;
+     height:85vh;
+     background-color:#ad6989;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-family: 'Kufam', cursive;
+
+ }
+ .container{
+     height:400px;
+     width:50%;
+     padding: 20px 0px;
+     background-color:#562349;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     font-family: 'Kufam', cursive;
+ }
+     button{
+         margin-top:10px;
+         padding: 10px;
+         background-color:white;
+         cursor: pointer;
+         font-size: 12px;
+         outline: none;
+         border: 2px solid rgb(185, 19, 135);
+         border-radius: 8px;
+         font-family: 'Kufam', cursive;
+     }
+     .btn{
+         font-weight: 600;
+         padding: 1rem 2rem;
+         background:#ccd2eb;
+         text-transform: uppercase;
+         transition-property: all;
+         transition-duration: 0.5s;
+         transition-timing-function: cubic-bezier(0.65,-0.25,0.25, 1.95);
+     }
+     .btn:hover, .btn:focus, .btn:active{
+         letter-spacing: 0.125rem;
+         word-spacing: 0.2rem;
+     }
+ input{
+     width: 40%;
+     padding: 15px 0;
+     text-align: center;
+     border-radius: 25px;
+     outline:none;
+     border:none;
+     background-color: white;
+     color:black;
+     margin: 2rem;
+     font-size: 1.1rem;
+    }
+    .hidden{
+        display: none;
+    }
+    .msg{
+        color:white;
+        font-size: 25px;
+    }

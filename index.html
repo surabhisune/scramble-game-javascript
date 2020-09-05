@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <h1>GUESS THE WORD GAME</h1>
+    </header>
+    <section>
+        <div class="container">
+            <h3 class="msg"></h3>
+            <input type="text" class="hidden">
+            <button class="btn">Click here to start</button>
+        </div>
+    </section>
+    <script>
+        let msg=document.querySelector('.msg');
+        let guess=document.querySelector('input');
+        let btn=document.querySelector('.btn');
+        let play=false;
+        let newWords="";
+        let randWords="";
+        let words = ['python','javascript','cpp','php','java','c#','html','css','reactjs','angularjs','swift','androis',
+        'sql','go','wordpress'];
+
+        let createNewWords = () => {
+            let ranNum =Math.floor(Math.random() *words.length);
+            let newTempWord=words[ranNum];
+            return newTempWord;
+        }
+        let scramble = (arr) =>{
+            for(let i=arr.length-1;i>0;i--)
+            {
+                let temp=arr[i];
+                let j=Math.floor(Math.random()*(i+1));
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+            return arr;
+        }
+
+        btn.addEventListener('click',function(){
+          if(!play){
+              play=true;
+              btn.innerHTML="Guess";
+              guess.classList.toggle('hidden');
+              newWords=createNewWords();
+              randWords=scramble(newWords.split("")).join("");
+              //console.log(randomWords);
+              msg.innerHTML=randWords;
+          }else{
+              let tempWord = guess.value;
+              if(tempWord === newWords)
+                 {
+                  console.log("cor");
+                  play=false;
+                  msg.innerHTML=`CORRECT !!!.. It is ${newWords}`;
+                  btn.innerHTML="START AGAIN";
+                  guess.classList.toggle('hidden');
+                  guess.value="";
+              }
+              else{
+                  msg.innerHTML=`WRONG, Better luck next time.It is ${newWords}`;
+              }
+          }
+          
+        });
+    </script>
+</body>
+</html>
